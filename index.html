@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#283b82" />
+  <title>GeoRush</title>
+  <link rel="icon" type="image/svg+xml" href="./logo.svg" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="game-shell" id="gameShell">
+    <canvas id="game" aria-label="Игровое поле GeoRush"></canvas>
+    <div class="screen-shade" aria-hidden="true"></div>
+
+    <section class="screen menu-screen" id="menuScreen" aria-label="Главное меню">
+      <div class="menu-content">
+        <div class="menu-brand"><span class="menu-logo" aria-hidden="true"><img src="./logo.svg" width="64" height="64" alt="" /></span><h1><span class="brand-geo">GEO</span><span class="brand-rush">RUSH</span></h1></div>
+        <button class="menu-play" id="startButton" type="button" data-ui-sound="none"><span class="menu-play-icon" aria-hidden="true"></span><span class="menu-play-copy"><strong>ИГРАТЬ</strong><small>Бесконечный режим</small></span></button>
+        <button class="menu-action" id="levelsButton" type="button">Уровни</button>
+        <div class="menu-tools"><button class="menu-action" id="editorButton" type="button">Редактор карт</button><button class="menu-action" id="settingsButton" type="button">Настройки</button></div>
+        <div class="menu-best"><span>Рекорд</span><strong id="menuBest">0 <small>м</small></strong></div>
+      </div>
+    </section>
+
+    <section class="hud is-hidden" id="hud" aria-label="Информация о забеге">
+      <div class="hud-left"><div class="hud-stats"><div class="hud-record" id="hudRecord"><span class="hud-label">РЕКОРД</span><strong><span id="best">0000</span><small> М</small></strong></div><div class="hud-record"><span class="hud-label">ПРОЙДЕНО</span><strong><span id="currentDistance">0000</span><small> М</small></strong></div><div class="hud-record is-hidden" id="hudLevel"><span class="hud-label" id="levelName"></span><strong><span id="levelProgress">0</span><small> %</small></strong></div></div></div>
+      <div class="hud-bottom"><span id="runStatus">ДЕРЖИ РИТМ</span><span>SPACE / ↑ / TAP</span></div>
+    </section>
+
+    <section class="screen levels-screen is-hidden" id="levelsScreen" aria-label="Официальные уровни GeoRush">
+      <div class="levels-panel"><div class="levels-heading"><div><span class="modal-kicker">GEO RUSH</span><h2>Официальные уровни</h2><p>Выбери трассу или открой её в редакторе.</p></div><button class="icon-button" id="levelsCloseButton" type="button" aria-label="Вернуться в меню">×</button></div><div class="level-list" id="levelList"></div></div>
+    </section>
+
+    <section class="screen modal-screen is-hidden" id="settingsScreen" aria-label="Настройки">
+      <div class="modal-card settings-card"><span class="modal-kicker">НАСТРОЙКИ</span><h2>Звук</h2><label class="setting-row"><span>Звуковые эффекты</span><input id="settingsSound" type="checkbox" checked></label><label class="setting-slider"><span>Громкость <b id="soundVolumeValue">100%</b></span><input id="soundVolumeSlider" type="range" min="0" max="100" value="100"></label><p>Звуки игры, меню и редактора.</p><button class="primary-button" id="settingsCloseButton" type="button"><span>ГОТОВО</span><span class="button-arrow">✓</span></button></div>
+    </section>
+
+    <section class="screen modal-screen is-hidden" id="pauseScreen" aria-label="Пауза">
+      <div class="modal-card pause-card"><h2>ПАУЗА</h2><button class="primary-button" id="resumeButton" type="button"><span>ПРОДОЛЖИТЬ</span><span class="button-arrow">▶</span></button><button class="text-button" id="pauseEditorButton" type="button">РЕДАКТОР КАРТ</button><button class="text-button" id="pauseMenuButton" type="button">В ГЛАВНОЕ МЕНЮ</button></div>
+    </section>
+
+    <section class="screen modal-screen is-hidden" id="gameOverScreen" aria-label="Конец забега">
+      <div class="modal-card"><span class="modal-kicker" id="overKicker">ЗАБЕГ ЗАВЕРШЁН</span><h2><span id="finalDistance">0000</span> <small>М</small><br><em id="overQuestion">Ещё один раз?</em></h2><p id="finalRecord" class="record-notice is-hidden">НОВЫЙ РЕКОРД</p><div class="result-row"><span>КРИСТАЛЛЫ <b id="finalCrystals">0</b></span><span><span id="finalBestLabel">РЕКОРД</span> <b id="finalBest">0000 М</b></span></div><button class="primary-button" id="restartButton" type="button"><span id="restartLabel">НОВЫЙ ЗАБЕГ</span><span class="button-arrow">↗</span></button><button class="text-button" id="overMenuButton" type="button">В ГЛАВНОЕ МЕНЮ</button></div>
+    </section>
+    <section class="editor-screen is-hidden" id="editorScreen" aria-label="Редактор карт">
+      <iframe id="editorFrame" title="Редактор карт GeoRush" src="./editor.html?embedded=1"></iframe>
+    </section>
+  </main>
+  <script src="./background-art.js"></script>
+  <script src="./backgrounds.js"></script>
+  <script src="./map-format.js"></script>
+  <script src="./map-geometry.js"></script>
+  <script src="./official-levels.js"></script>
+  <script src="./audio.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>

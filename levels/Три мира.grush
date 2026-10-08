@@ -1,0 +1,454 @@
+{
+  "version": 1,
+  "name": "Три мира",
+  "sections": [
+    {
+      "mode": "cube",
+      "objects": [
+        {
+          "kind": "block",
+          "x": 180,
+          "width": 180,
+          "height": 50
+        },
+        {
+          "kind": "block",
+          "x": 360,
+          "width": 180,
+          "height": 100
+        },
+        {
+          "kind": "spikeBlock",
+          "x": 620,
+          "width": 100,
+          "height": 60
+        },
+        {
+          "kind": "block",
+          "x": 860,
+          "width": 220,
+          "height": 120
+        },
+        {
+          "kind": "miniSpike",
+          "x": 1200,
+          "count": 3
+        }
+      ],
+      "theme": 3,
+      "label": "Стены крепости",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "cube",
+      "objects": [
+        {
+          "kind": "pad",
+          "x": 180
+        },
+        {
+          "kind": "pit",
+          "x": 380,
+          "width": 300
+        },
+        {
+          "kind": "orb",
+          "x": 500,
+          "y": 400
+        },
+        {
+          "kind": "pit",
+          "x": 680,
+          "width": 300
+        },
+        {
+          "kind": "orb",
+          "x": 760,
+          "y": 300
+        },
+        {
+          "kind": "platform",
+          "x": 920,
+          "width": 220,
+          "height": 140
+        },
+        {
+          "kind": "spike",
+          "x": 1220,
+          "count": 2
+        }
+      ],
+      "theme": 3,
+      "label": "Через ров",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveTunnel",
+          "x": 180,
+          "width": 220,
+          "gap": 90,
+          "y": 440
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 560,
+          "width": 160,
+          "gap": 85,
+          "y": 260
+        },
+        {
+          "kind": "waveDiamond",
+          "x": 880,
+          "y": 360
+        },
+        {
+          "kind": "waveGate",
+          "x": 1160,
+          "width": 100,
+          "gap": 90,
+          "y": 440
+        }
+      ],
+      "theme": 3,
+      "label": "Нижние бойницы",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveGate",
+          "x": 180,
+          "width": 80,
+          "gap": 80,
+          "y": 280
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 440,
+          "width": 140,
+          "gap": 80,
+          "y": 440
+        },
+        {
+          "kind": "waveGate",
+          "x": 760,
+          "width": 80,
+          "gap": 80,
+          "y": 260
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 1040,
+          "width": 220,
+          "gap": 85,
+          "y": 440
+        }
+      ],
+      "theme": 2,
+      "label": "Зеркальный слалом",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "spider",
+      "objects": [
+        {
+          "kind": "spiderBlock",
+          "x": 180,
+          "width": 220,
+          "lane": "bottom"
+        },
+        {
+          "kind": "spiderSpike",
+          "x": 520,
+          "width": 140,
+          "lane": "top"
+        },
+        {
+          "kind": "spiderSaw",
+          "x": 800,
+          "lane": "bottom"
+        },
+        {
+          "kind": "spiderBlock",
+          "x": 1020,
+          "width": 260,
+          "lane": "top"
+        }
+      ],
+      "theme": 2,
+      "label": "Две стороны зеркала",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "spider",
+      "objects": [
+        {
+          "kind": "spiderSaw",
+          "x": 180,
+          "lane": "bottom"
+        },
+        {
+          "kind": "spiderSpike",
+          "x": 360,
+          "width": 180,
+          "lane": "top"
+        },
+        {
+          "kind": "spiderSaw",
+          "x": 680,
+          "lane": "bottom"
+        },
+        {
+          "kind": "spiderBlock",
+          "x": 880,
+          "width": 140,
+          "lane": "bottom"
+        },
+        {
+          "kind": "spiderSpike",
+          "x": 1160,
+          "width": 120,
+          "lane": "top"
+        }
+      ],
+      "theme": 2,
+      "label": "Разбитые зеркала",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "cube",
+      "objects": [
+        {
+          "kind": "pad",
+          "x": 180
+        },
+        {
+          "kind": "spikeBlock",
+          "x": 400,
+          "width": 100,
+          "height": 80
+        },
+        {
+          "kind": "orb",
+          "x": 560,
+          "y": 440
+        },
+        {
+          "kind": "pit",
+          "x": 680,
+          "width": 300
+        },
+        {
+          "kind": "platform",
+          "x": 700,
+          "width": 160,
+          "height": 160
+        },
+        {
+          "kind": "orb",
+          "x": 900,
+          "y": 260
+        },
+        {
+          "kind": "block",
+          "x": 1100,
+          "width": 180,
+          "height": 100
+        }
+      ],
+      "theme": 1,
+      "label": "Пружинный разгон",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveCeil",
+          "x": 180,
+          "width": 200,
+          "height": 170
+        },
+        {
+          "kind": "waveGate",
+          "x": 500,
+          "width": 80,
+          "gap": 80,
+          "y": 440
+        },
+        {
+          "kind": "wavePulse",
+          "x": 740,
+          "y": 300
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 1000,
+          "width": 240,
+          "gap": 90,
+          "y": 280
+        }
+      ],
+      "theme": 4,
+      "label": "Невесомость",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "spider",
+      "objects": [
+        {
+          "kind": "spiderSpike",
+          "x": 180,
+          "width": 160,
+          "lane": "bottom"
+        },
+        {
+          "kind": "spiderBlock",
+          "x": 460,
+          "width": 240,
+          "lane": "top"
+        },
+        {
+          "kind": "spiderSaw",
+          "x": 820,
+          "lane": "bottom"
+        },
+        {
+          "kind": "spiderSaw",
+          "x": 940,
+          "lane": "bottom"
+        },
+        {
+          "kind": "spiderSpike",
+          "x": 1160,
+          "width": 120,
+          "lane": "top"
+        }
+      ],
+      "theme": 4,
+      "label": "Обратный отсчёт",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "cube",
+      "objects": [
+        {
+          "kind": "pit",
+          "x": 180,
+          "width": 300
+        },
+        {
+          "kind": "platform",
+          "x": 180,
+          "width": 220,
+          "height": 100
+        },
+        {
+          "kind": "block",
+          "x": 520,
+          "width": 180,
+          "height": 140
+        },
+        {
+          "kind": "pit",
+          "x": 800,
+          "width": 280
+        },
+        {
+          "kind": "platform",
+          "x": 800,
+          "width": 220,
+          "height": 120
+        },
+        {
+          "kind": "orb",
+          "x": 1040,
+          "y": 260
+        },
+        {
+          "kind": "spike",
+          "x": 1240,
+          "count": 2
+        }
+      ],
+      "theme": 3,
+      "label": "Башни над пропастью",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveTunnel",
+          "x": 180,
+          "width": 180,
+          "gap": 80,
+          "y": 440
+        },
+        {
+          "kind": "waveGate",
+          "x": 540,
+          "width": 80,
+          "gap": 85,
+          "y": 260
+        },
+        {
+          "kind": "waveSaw",
+          "x": 780,
+          "y": 420
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 1040,
+          "width": 240,
+          "gap": 80,
+          "y": 440
+        }
+      ],
+      "theme": 4,
+      "label": "Последний изгиб",
+      "background": "three-worlds"
+    },
+    {
+      "mode": "spider",
+      "objects": [
+        {
+          "kind": "spiderBlock",
+          "x": 180,
+          "width": 200,
+          "lane": "bottom"
+        },
+        {
+          "kind": "spiderSpike",
+          "x": 500,
+          "width": 180,
+          "lane": "top"
+        },
+        {
+          "kind": "spiderSaw",
+          "x": 800,
+          "lane": "bottom"
+        },
+        {
+          "kind": "spiderBlock",
+          "x": 980,
+          "width": 120,
+          "lane": "top"
+        },
+        {
+          "kind": "spiderSpike",
+          "x": 1220,
+          "width": 100,
+          "lane": "bottom"
+        }
+      ],
+      "theme": 3,
+      "label": "Последние ворота",
+      "background": "three-worlds"
+    }
+  ]
+}

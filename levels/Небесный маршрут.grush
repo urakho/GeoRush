@@ -1,0 +1,352 @@
+{
+  "version": 1,
+  "name": "Небесный маршрут",
+  "sections": [
+    {
+      "mode": "cube",
+      "objects": [
+        {
+          "kind": "block",
+          "x": 220,
+          "width": 220,
+          "height": 60
+        },
+        {
+          "kind": "pit",
+          "x": 500,
+          "width": 240
+        },
+        {
+          "kind": "platform",
+          "x": 500,
+          "width": 240,
+          "height": 100
+        },
+        {
+          "kind": "pad",
+          "x": 880
+        },
+        {
+          "kind": "spikeBlock",
+          "x": 1100,
+          "width": 140,
+          "height": 80
+        }
+      ],
+      "theme": 1,
+      "label": "Стартовая эстакада",
+      "background": "sky-route"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveGate",
+          "x": 220,
+          "width": 80,
+          "gap": 115,
+          "y": 440
+        },
+        {
+          "kind": "waveCeil",
+          "x": 440,
+          "width": 180,
+          "height": 130
+        },
+        {
+          "kind": "waveGate",
+          "x": 740,
+          "width": 100,
+          "gap": 100,
+          "y": 300
+        },
+        {
+          "kind": "waveFloor",
+          "x": 1040,
+          "width": 220,
+          "height": 140
+        }
+      ],
+      "theme": 1,
+      "label": "Вход в шахту",
+      "background": "sky-route"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveTunnel",
+          "x": 180,
+          "width": 180,
+          "gap": 85,
+          "y": 280
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 520,
+          "width": 160,
+          "gap": 85,
+          "y": 440
+        },
+        {
+          "kind": "waveGate",
+          "x": 840,
+          "width": 80,
+          "gap": 90,
+          "y": 260
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 1100,
+          "width": 160,
+          "gap": 90,
+          "y": 440
+        }
+      ],
+      "theme": 1,
+      "label": "Зигзаг",
+      "background": "sky-route"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveFloor",
+          "x": 200,
+          "width": 200,
+          "height": 150
+        },
+        {
+          "kind": "waveDiamond",
+          "x": 480,
+          "y": 320
+        },
+        {
+          "kind": "waveCeil",
+          "x": 640,
+          "width": 220,
+          "height": 150
+        },
+        {
+          "kind": "waveDiamond",
+          "x": 920,
+          "y": 420
+        },
+        {
+          "kind": "waveGate",
+          "x": 1180,
+          "width": 80,
+          "gap": 100,
+          "y": 300
+        }
+      ],
+      "theme": 2,
+      "label": "Кристальные карманы",
+      "background": "sky-route"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveTunnel",
+          "x": 180,
+          "width": 300,
+          "gap": 90,
+          "y": 300
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 620,
+          "width": 260,
+          "gap": 90,
+          "y": 420
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 1040,
+          "width": 240,
+          "gap": 90,
+          "y": 280
+        }
+      ],
+      "theme": 2,
+      "label": "Длинный тоннель",
+      "background": "sky-route"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveBlock",
+          "x": 200,
+          "y": 400
+        },
+        {
+          "kind": "waveCeil",
+          "x": 400,
+          "width": 180,
+          "height": 160
+        },
+        {
+          "kind": "waveBlock",
+          "x": 640,
+          "y": 260
+        },
+        {
+          "kind": "waveFloor",
+          "x": 860,
+          "width": 180,
+          "height": 160
+        },
+        {
+          "kind": "waveSaw",
+          "x": 1140,
+          "y": 340
+        }
+      ],
+      "theme": 4,
+      "label": "Плавающие острова",
+      "background": "sky-route"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveGate",
+          "x": 180,
+          "width": 80,
+          "gap": 105,
+          "y": 420
+        },
+        {
+          "kind": "wavePulse",
+          "x": 440,
+          "y": 260
+        },
+        {
+          "kind": "waveGate",
+          "x": 660,
+          "width": 80,
+          "gap": 100,
+          "y": 280
+        },
+        {
+          "kind": "wavePulse",
+          "x": 920,
+          "y": 440
+        },
+        {
+          "kind": "waveGate",
+          "x": 1160,
+          "width": 80,
+          "gap": 105,
+          "y": 380
+        }
+      ],
+      "theme": 4,
+      "label": "Маятники",
+      "background": "sky-route"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveFloor",
+          "x": 180,
+          "width": 240,
+          "height": 170
+        },
+        {
+          "kind": "waveCeil",
+          "x": 500,
+          "width": 240,
+          "height": 170
+        },
+        {
+          "kind": "waveGate",
+          "x": 820,
+          "width": 100,
+          "gap": 80,
+          "y": 440
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 1080,
+          "width": 200,
+          "gap": 85,
+          "y": 280
+        }
+      ],
+      "theme": 2,
+      "label": "Узкие арки",
+      "background": "sky-route"
+    },
+    {
+      "mode": "wave",
+      "objects": [
+        {
+          "kind": "waveTunnel",
+          "x": 180,
+          "width": 200,
+          "gap": 90,
+          "y": 260
+        },
+        {
+          "kind": "waveSaw",
+          "x": 540,
+          "y": 380
+        },
+        {
+          "kind": "waveTunnel",
+          "x": 720,
+          "width": 180,
+          "gap": 90,
+          "y": 440
+        },
+        {
+          "kind": "waveCeil",
+          "x": 1040,
+          "width": 240,
+          "height": 140
+        }
+      ],
+      "theme": 1,
+      "label": "Выход из шахты",
+      "background": "sky-route"
+    },
+    {
+      "mode": "cube",
+      "objects": [
+        {
+          "kind": "block",
+          "x": 220,
+          "width": 180,
+          "height": 40
+        },
+        {
+          "kind": "spike",
+          "x": 500,
+          "count": 2
+        },
+        {
+          "kind": "pad",
+          "x": 760
+        },
+        {
+          "kind": "pit",
+          "x": 940,
+          "width": 280
+        },
+        {
+          "kind": "platform",
+          "x": 1180,
+          "width": 100,
+          "height": 80
+        }
+      ],
+      "theme": 0,
+      "label": "Посадка",
+      "background": "sky-route"
+    }
+  ]
+}

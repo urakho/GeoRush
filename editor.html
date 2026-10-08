@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#172744" />
+  <title>Редактор карт — GeoRush</title>
+  <link rel="icon" type="image/svg+xml" href="./logo.svg" />
+  <link rel="stylesheet" href="./editor.css" />
+</head>
+<body>
+  <div class="editor-shell">
+    <header class="editor-header">
+      <div class="editor-brand"><img class="editor-logo" src="./logo.svg" width="34" height="34" alt="" /><span>GEO<b>RUSH</b><small>Редактор карт</small></span></div>
+      <div class="header-actions"><button id="backButton" class="quiet-button" type="button">← В игру</button><button id="playButton" class="play-button" type="button" data-ui-sound="none">▶ Проверить</button></div>
+    </header>
+    <div class="editor-toolbar">
+      <label class="name-field">Название карты<input id="mapName" maxlength="50" value="Моя карта" autocomplete="off" /></label>
+      <div class="file-actions">
+        <button id="newButton" class="quiet-button" type="button">Новая</button>
+        <button id="importButton" type="button">Открыть</button>
+        <button id="exportButton" class="download-button" type="button" title="Скачать карту · Ctrl+S">↓ Скачать .grush</button>
+        <details class="dropdown file-menu"><summary aria-label="Дополнительные действия с картой">Ещё</summary><div class="dropdown-panel"><label>Готовые уровни<select id="officialLevel" aria-label="Открыть официальный уровень в редакторе"><option value="">Выбрать уровень…</option></select></label><button id="saveButton" type="button">Сохранить черновик</button><small>Изменения сохраняются автоматически.</small></div></details>
+        <input id="importFile" type="file" accept=".grush,.json,application/json" hidden />
+      </div>
+    </div>
+    <div class="editor-main">
+      <aside class="editor-sidebar">
+        <div class="section-controls"><label>Форма игрока<select id="sectionMode"><option value="cube">Куб</option><option value="wave">Пила</option><option value="spider">Паук</option></select></label><label>Цвет трассы<select id="sectionTheme"><option value="">Случайный</option><option value="0">Город</option><option value="1">Завод</option><option value="2">Зеркальный зал</option><option value="3">Крепость</option><option value="4">Пустота</option></select></label><label>Задний фон<select id="sectionBackground" aria-label="Задний фон секции"></select></label><button id="backgroundButton" class="quiet-button" type="button">Создать / изменить фон</button><p id="modeHint" class="mode-hint"></p></div>
+        <div class="tools-heading">Объекты <small>Выбери и поставь на поле</small></div>
+        <div id="toolList" class="tool-list"></div>
+      </aside>
+      <main class="editor-workspace">
+        <div class="track-panel">
+          <div class="track-heading"><div><strong>Секции</strong><span id="mapStats"></span></div><div class="section-actions"><button id="addSection" type="button">＋ Секция</button><details class="dropdown section-menu"><summary aria-label="Действия с выбранной секцией">•••</summary><div class="dropdown-panel"><button id="sectionLeft" type="button">← Переместить раньше</button><button id="sectionRight" type="button">Переместить позже →</button><button id="duplicateSection" type="button">Копировать секцию</button><button id="removeSection" class="danger" type="button">Удалить секцию</button></div></details></div></div>
+          <div id="sectionList" class="section-list" aria-label="Секции карты"></div>
+        </div>
+        <div class="stage-title"><div><strong id="stageName">Секция 01 · Куб</strong><span id="stageCount">0 объектов</span></div><div class="stage-actions"><div class="placement-modes" role="group" aria-label="Режим размещения"><button id="modeFree" type="button" aria-pressed="true">Свободно</button><button id="modeGrid" type="button" aria-pressed="false">По клеткам</button></div><select id="snapGrid" aria-label="Размер клетки" hidden><option value="40">40 px</option><option value="20">20 px</option><option value="10">10 px</option></select><button id="undoButton" type="button" title="Отменить · Ctrl+Z" aria-label="Отменить">↶</button><button id="redoButton" type="button" title="Вернуть · Ctrl+Shift+Z" aria-label="Вернуть">↷</button><button id="clearButton" class="quiet-button" type="button">Очистить</button></div></div>
+        <div class="stage-wrap"><canvas id="mapCanvas" width="1500" height="540" aria-label="Поле редактирования карты"></canvas></div>
+        <div class="object-inspector" data-empty="true">
+          <div class="object-heading"><small>Выбранный объект</small><strong id="objectName">Выбери объект на поле</strong></div>
+          <div class="object-fields"><label>X<input id="objectX" type="number" min="-500" max="1500" step="1" disabled /></label><label id="objectYLabel">Y<input id="objectY" type="number" min="-500" max="720" step="1" disabled /></label><label>Угол<input id="objectRotation" type="number" step="1" disabled aria-label="Угол поворота в градусах" /><span>°</span></label></div>
+          <div class="object-actions"><button id="rotateObject" type="button" disabled title="Повернуть на 90°. Для любого угла используй поле «Угол».">↻ 90°</button><details id="sizePanel" class="dropdown size-panel" hidden><summary>Размеры</summary><div id="sizeFields" class="dropdown-panel"></div></details><button id="duplicateObject" type="button" disabled title="Копировать · Ctrl+D">Копия</button><button id="deleteObject" class="danger" type="button" disabled title="Удалить · Delete">Удалить</button></div>
+        </div>
+        <div class="editor-footer"><div id="editorStatus" class="editor-status" role="status">Выбери объект и нажми на поле.</div><details class="dropdown help-menu"><summary>Управление ?</summary><div class="dropdown-panel"><p>Нажатие на поле — поставить объект.</p><p>«Выбрать» — перетаскивать объекты.</p><p>X / Y — точное положение, «Угол» — любой поворот.</p><p>Q / E — поворот на 15°; Shift — на 1°.</p><p>Стрелки — сдвиг; Shift — увеличенный шаг.</p><p>Delete / правая кнопка — удалить.</p><p>Ctrl+Z — отменить, Ctrl+Shift+Z — вернуть.</p><p>Ctrl+D — копия. Ctrl+S — скачать карту.</p></div></details></div>
+      </main>
+    </div>
+  </div>
+  <script src="./background-art.js"></script>
+  <script src="./backgrounds.js"></script>
+  <script src="./map-format.js"></script>
+  <script src="./map-geometry.js"></script>
+  <script src="./official-levels.js"></script>
+  <script src="./audio.js"></script>
+  <script src="./background-editor.js"></script>
+  <script src="./editor.js"></script>
+</body>
+</html>
